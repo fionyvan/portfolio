@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Kdam+Thmor+Pro&family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+.brand span {
+    color: crimson;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+.section-title span {
+    color: crimson;
+}
+
+/* Header Section */
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 13vh;
+    background: rgba(31, 30, 30, 0.24);
+}
+
+#header .header_container {
+    display: flex;
+    justify-content: space-between;
+    min-height: 8vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 13vh;
+}
+
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 13vh; */
+    max-width: 1300px;
+    padding: 0 40px;
+}
+
+#header .nav-menu {
+    list-style: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+#header .nav-menu a {
+    font-size: 2.5rem;
+    font-weight: 50;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    display: flex;
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    font-size: 10rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: .3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .hamburger {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+}
+/* End Header Section */
+
+/* Hero Section */
+#hero {
+    background-image: url(./img/img12.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #131313;
+    opacity: .8;
+    z-index: -1;
+}
+
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero h1 {
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal 3s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#hero h1:nth-child(3) {
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1s;
+}
+
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+#hero h2 {
+    display: block;
+    width: fit-content;
+    margin-top: 30px;
+    width: fit-content;
+    font-size: 2rem;
+    position: relative;
+    color: #fff;
+    color: transparent;
+    animation: text_reveal 3s ease forwards;
+    animation-delay: 3.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#hero h2 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    /* animation: text_reveal_box 1s ease;
+    animation-delay: 4s; */
+}
+
+#hero .cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 3px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 36px;
+    transition: .3s ease background-color;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover {
+    color: white;
+    background-color: crimson;
+}
+/* End Hero Section */
+
+/* Projects Section */
+#projects .projects {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+#projects .projects-header h1 {
+    margin-bottom: 50px;
+}
+
+#projects .all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#projects .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#projects .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #5d6186 1%,#646bb5 100%);
+    color: white;
+}
+
+#projects .project-info h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#projects .project-info h2 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+#projects .project-info p {
+    color: white;
+}
+
+#projects .project-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#projects .project-img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #5d6186 1%,#646bb5 10%);
+    opacity: .4;
+}
+
+#projects .project-img img {
+    transition:  .3s ease transform;
+}
+
+#projects .project-item:hover .project-img img {
+    transform: scale(1.1);
+}
+
+/* End Projects Section */
+
+/* Keyframes */
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+@keyframes text_reveal_name {
+    100%{
+        color: crimson;
+        font-weight: 500;
+    }
+}
+
+/* End Keyframes */
